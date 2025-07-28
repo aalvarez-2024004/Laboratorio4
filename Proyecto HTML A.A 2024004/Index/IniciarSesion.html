@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | PalmMF</title>
+    <link rel="stylesheet" href="/Styles/InicioSesion.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">PalmMF</a>
+        <div class="links">
+            <a href="index.html">Principal</a>
+            <a href="Productos.html">Productos</a>
+            <a href="AcercaNosotros.html">Acerca de nosotros</a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="InicioSesion-Card">
+            <h2>Iniciar Sesión</h2>
+            <h3>Ingresa tus credenciales</h3>
+
+            <form id="login-form" class="login-form">
+                <input type="text" name="usuario" placeholder="Usuario" required>
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <button type="submit">INGRESA</button>
+                <a href="#" class="olvidaste">¿Olvidaste tu contraseña?</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Previene el envío por defecto
+            const usuario = this.usuario.value.trim();
+            const contrasena = this.contrasena.value.trim();
+
+            if (usuario && contrasena) {
+                window.location.href = "index.html";
+            } else {
+                alert("Por favor, llena ambos campos.");
+            }
+        });
+    </script>
+
+</body>
+</html>
